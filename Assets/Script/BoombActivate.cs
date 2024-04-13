@@ -6,8 +6,8 @@ public class BoombActivate : MonoBehaviour
     [SerializeField] private Renderer _renderer;
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private GameObject _bombUI;
-    [SerializeField] private float _distance;
-    [SerializeField] private float _distanceDeact;
+    [SerializeField] private float _distance, _distanceDeact;
+    [SerializeField] private bool _startDeactivation;
     private int _timer;
     private void Start()
     {
@@ -33,28 +33,32 @@ public class BoombActivate : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 StartCoroutine("Deactiv");
+                _startDeactivation = true;
+
             }
 
             if (Input.GetKeyUp(KeyCode.E))
             {
                 StopCoroutine("Deactiv");
 
-                if(_timer < 3)
+                if(_timer < 5)
                 {
-                    Debug.Log("dead");
+                    Debug.Log("Dead Up deactiv key");
                 }
 
                 _timer = 0;
+                _startDeactivation = false;
             }
         }
 
-        //else if(posPlayer > _distanceDeact)
-        //{
-        //    if(_timer < 3)
-        //    {
-        //        Debug.Log("dead");
-        //    }
-        //}
+        else if (posPlayer > _distanceDeact)
+        {
+            if(_startDeactivation)
+            {
+                StopCoroutine("Deactiv");
+                Debug.Log("Dead move distance");
+            }
+        }
 
     }
 

@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5628965770424342714}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: -6.7000003}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: -6.7000003}
   m_LocalScale: {x: -0.82115275, y: 0.014339869, z: 11.899}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -129,9 +129,9 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!1 &5697398421858927693
 GameObject:
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 967680094220165607}
   - component: {fileID: 3236713161695043459}
   - component: {fileID: 3830226113377749845}
-  - component: {fileID: 8914424124084767113}
+  - component: {fileID: 3126722289962160881}
   m_Layer: 0
   m_Name: StepsHorizontal
   m_TagString: Untagged
@@ -270,9 +270,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.9070623, y: 1, z: 15.719385}
-  m_Center: {x: -0.04688009, y: 0, z: -8.4014845}
---- !u!114 &8914424124084767113
+  m_Size: {x: 1.7015369, y: 1, z: 15.719385}
+  m_Center: {x: -0.004062017, y: 0, z: -8.4014845}
+--- !u!114 &3126722289962160881
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -284,12 +284,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c9b6d135c004b4a9f35b825db55466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.05
+  _speed: 1
+  _speedFollowPlatform: 0
   _platform: {fileID: 5628965770424342714}
   _rb: {fileID: 4689810402513328717}
+  _rbPlayer: {fileID: 0}
   down: 0
   left: 0
   vertical: 0
   horizontal: 1
+  isPlatform: 0
   posMax: 0.5
   posMin: -0.5

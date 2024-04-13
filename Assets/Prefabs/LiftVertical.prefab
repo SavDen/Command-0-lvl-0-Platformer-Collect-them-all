@@ -151,13 +151,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c9b6d135c004b4a9f35b825db55466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.05
+  _speed: 0.7
   _platform: {fileID: 8796764907246409315}
   _rb: {fileID: 3989402384768172717}
   down: 0
   left: 0
   vertical: 1
   horizontal: 0
+  _speeds: 0
   posMax: 0.5
   posMin: -0.5
 --- !u!1 &8796764907246409315
@@ -289,7 +290,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 122
   m_CollisionDetection: 0

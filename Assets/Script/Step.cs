@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class Step : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    [SerializeField] private float _speed, _speedFollowPlatform;
     [SerializeField] private GameObject _platform;
-    [SerializeField] private Rigidbody _rb;
-    [SerializeField] private bool down, left, vertical, horizontal;
+    [SerializeField] private Rigidbody _rb, _rbPlayer;
+    [SerializeField] private bool down, left, vertical, horizontal, isPlatform;
+
 
     public float posMax, posMin;
 
@@ -13,8 +14,9 @@ public class Step : MonoBehaviour
    
     private void FixedUpdate()
     {
-        if (vertical)
+        if (vertical) //Проверка режима работы
         {
+            //Проверка границ платформы
             if (_platform.transform.localPosition.y <= posMin)
             {
                 down = false;
@@ -26,15 +28,16 @@ public class Step : MonoBehaviour
                 down = true;
             }
 
-
+            //Движение платформы
             if (down)
-                _rb.MovePosition(_rb.position + new Vector3(0, -1 * _speed, 0));
+                _rb.AddForce(0, -_speed, 0, ForceMode.VelocityChange);
             else
-                _rb.MovePosition(_rb.position + new Vector3(0, 1 * _speed, 0));
+                _rb.AddForce(0, _speed, 0, ForceMode.VelocityChange);
         }
 
-        if(horizontal)
+        if (horizontal) //Проверка режима работы
         {
+            //Проверка границ платформы
             if (_platform.transform.localPosition.x <= posMin)
             {
                 left = false;
@@ -46,26 +49,42 @@ public class Step : MonoBehaviour
                 left = true;
             }
 
-
+            //Движение платформы
             if (left)
-                _rb.MovePosition(_rb.position + new Vector3(-1 * _speed, 0, 0));
+                _rb.AddForce(-_speed,0, 0, ForceMode.VelocityChange);
             else
-                _rb.MovePosition(_rb.position + new Vector3(1 * _speed, 0, 0));
+                _rb.AddForce(_speed, 0, 0, ForceMode.VelocityChange);
+
+            //Движение игрока пока тот находится на платформе
+            if (isPlatform)
+            {
+                if (left)
+                    _rbPlayer.AddForce(-_speedFollowPlatform, 0, 0, ForceMode.VelocityChange);
+                else
+                    _rbPlayer.AddForce(_speedFollowPlatform, 0, 0, ForceMode.VelocityChange);
+
+            }
+
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
         if(other.TryGetComponent(out Move player))
-        _platform.GetComponent<BoxCollider>().isTrigger = false;
+        {
+            _platform.GetComponent<BoxCollider>().isTrigger = false;
+            isPlatform = true;
+        }
 
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.TryGetComponent(out Move player))
-        _platform.GetComponent<BoxCollider>().isTrigger = true;
-
+        {
+            _platform.GetComponent<BoxCollider>().isTrigger = true;
+            isPlatform = false;
+        }
 
     }
 

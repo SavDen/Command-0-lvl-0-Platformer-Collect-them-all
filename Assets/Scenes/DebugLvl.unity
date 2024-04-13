@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -384,7 +384,7 @@ Transform:
   m_GameObject: {fileID: 476077916}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 170.6, y: -2, z: 0}
+  m_LocalPosition: {x: 167.5, y: -2, z: 0}
   m_LocalScale: {x: 29.359499, y: 1, z: 7.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -402,13 +402,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4785011429813322692, guid: e6ab6fa1612be6845a70161b396ed578, type: 3}
+      propertyPath: speedDown
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 7467159852376430171, guid: e6ab6fa1612be6845a70161b396ed578, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 127.2
       objectReference: {fileID: 0}
     - target: {fileID: 7467159852376430171, guid: e6ab6fa1612be6845a70161b396ed578, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 7467159852376430171, guid: e6ab6fa1612be6845a70161b396ed578, type: 3}
       propertyPath: m_LocalPosition.z
@@ -445,6 +449,10 @@ PrefabInstance:
     - target: {fileID: 8938352683448271868, guid: e6ab6fa1612be6845a70161b396ed578, type: 3}
       propertyPath: m_Mass
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938352683448271868, guid: e6ab6fa1612be6845a70161b396ed578, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -502,6 +510,10 @@ PrefabInstance:
     - target: {fileID: 5868671193056217765, guid: 69b3262fed8e1704db0e050aac077eba, type: 3}
       propertyPath: m_Name
       value: LiftVertical (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5868671193056217765, guid: 69b3262fed8e1704db0e050aac077eba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -784,6 +796,10 @@ PrefabInstance:
       value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8326618283419530606, guid: 75c6ac9d628fe964c985c40a5d86833a, type: 3}
+      propertyPath: _speed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326618283419530606, guid: 75c6ac9d628fe964c985c40a5d86833a, type: 3}
       propertyPath: _target
       value: 
       objectReference: {fileID: 1983398341}
@@ -1012,11 +1028,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 402534982804960757, guid: 93ad1645c3de7bc4cb04b08f3eba92d4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 144
+      value: 142.57
       objectReference: {fileID: 0}
     - target: {fileID: 402534982804960757, guid: 93ad1645c3de7bc4cb04b08f3eba92d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.55
+      value: -2.43
       objectReference: {fileID: 0}
     - target: {fileID: 402534982804960757, guid: 93ad1645c3de7bc4cb04b08f3eba92d4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1050,13 +1066,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 815319541047497618, guid: 93ad1645c3de7bc4cb04b08f3eba92d4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
+    - target: {fileID: 3126722289962160881, guid: 93ad1645c3de7bc4cb04b08f3eba92d4, type: 3}
+      propertyPath: _rbPlayer
+      value: 
+      objectReference: {fileID: 1983398343}
+    - target: {fileID: 3126722289962160881, guid: 93ad1645c3de7bc4cb04b08f3eba92d4, type: 3}
+      propertyPath: _speedFollowPlatform
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5697398421858927693, guid: 93ad1645c3de7bc4cb04b08f3eba92d4, type: 3}
       propertyPath: m_Name
       value: LiftHorizontal (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697398421858927693, guid: 93ad1645c3de7bc4cb04b08f3eba92d4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1115,13 +1139,29 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3126722289962160881, guid: 93ad1645c3de7bc4cb04b08f3eba92d4, type: 3}
+      propertyPath: _rbPlayer
+      value: 
+      objectReference: {fileID: 1983398343}
+    - target: {fileID: 3126722289962160881, guid: 93ad1645c3de7bc4cb04b08f3eba92d4, type: 3}
+      propertyPath: _speedFollowPlatform
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5697398421858927693, guid: 93ad1645c3de7bc4cb04b08f3eba92d4, type: 3}
       propertyPath: m_Name
       value: LiftHorizontal
       objectReference: {fileID: 0}
+    - target: {fileID: 5697398421858927693, guid: 93ad1645c3de7bc4cb04b08f3eba92d4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7235591545914995351, guid: 93ad1645c3de7bc4cb04b08f3eba92d4, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914424124084767113, guid: 93ad1645c3de7bc4cb04b08f3eba92d4, type: 3}
+      propertyPath: _speed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1225,6 +1265,11 @@ Transform:
 --- !u!4 &1983398341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7467159852376430171, guid: e6ab6fa1612be6845a70161b396ed578, type: 3}
+  m_PrefabInstance: {fileID: 547261625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1983398343 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 8938352683448271868, guid: e6ab6fa1612be6845a70161b396ed578, type: 3}
   m_PrefabInstance: {fileID: 547261625}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

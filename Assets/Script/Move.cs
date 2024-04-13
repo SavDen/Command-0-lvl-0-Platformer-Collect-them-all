@@ -10,6 +10,8 @@ public class Move : MonoBehaviour
     public float _rotationSpeed;
     public float _xEuler = 90;
     public bool IsGrounded;
+    public float speedDown;
+    public float speeds;
 
     private void FixedUpdate()
     {
@@ -27,11 +29,8 @@ public class Move : MonoBehaviour
 
         if (!IsGrounded)
         {
-            speedMultiplier = 0.7f;
-            if (Mathf.Abs(rb.velocity.x) > MaxSpeed && Mathf.Abs(Input.GetAxis("Horizontal")) > 0)
-            {
-                speedMultiplier = 0;
-            }
+            rb.velocity = new Vector3(0, speedDown, 0);
+            speedMultiplier = 0f;
         }
 
         rb.AddForce(Input.GetAxis("Horizontal") * MovedForce * speedMultiplier, 0.0f, 0.0f, ForceMode.VelocityChange);
@@ -44,7 +43,12 @@ public class Move : MonoBehaviour
     }
     private void OnCollisionStay(Collision other)
     {
-
+        
+        //if(other.gameObject.name.Equals("l")) 
+        //{
+        //    Debug.Log("collision");
+        //    //rb.AddForce(speeds, 0, 0);
+        //}
         if (Vector3.Angle(other.contacts[0].normal, Vector3.up) <= 45.0f)
         {
             IsGrounded = true;
@@ -55,4 +59,5 @@ public class Move : MonoBehaviour
     {
         IsGrounded = false;
     }
+
 }
