@@ -2,16 +2,19 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    public Rigidbody rb;
-    public Transform BodyPlayer;
-    public float MovedForce;
-    public float FrigtionForce;
-    public float MaxSpeed = 5.0f;
-    public float _rotationSpeed;
-    public float _xEuler = 90;
-    public bool IsGrounded;
-    public float speedDown;
-    public float speeds;
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private Transform BodyPlayer;
+    [SerializeField] private Transform _respown;
+    [SerializeField] private Animator _animtor;
+
+    [SerializeField] private float MovedForce;
+    [SerializeField] private float FrigtionForce;
+    [SerializeField] private float MaxSpeed = 5.0f;
+    [SerializeField] private float _rotationSpeed;
+    [SerializeField] private float _xEuler = 90;
+    [SerializeField] private float speedDown;
+
+    [SerializeField] private bool IsGrounded;
 
     private void FixedUpdate()
     {
@@ -40,6 +43,8 @@ public class Move : MonoBehaviour
             rb.AddForce(-rb.velocity.x * FrigtionForce, 0.0f, 0.0f, ForceMode.VelocityChange);
         }
 
+        
+
     }
     private void OnCollisionStay(Collision other)
     {
@@ -59,5 +64,12 @@ public class Move : MonoBehaviour
     {
         IsGrounded = false;
     }
+
+    public void Dead()
+    {
+        transform.position = _respown.position;
+        _animtor.SetTrigger("Dead");
+    }
+
 
 }

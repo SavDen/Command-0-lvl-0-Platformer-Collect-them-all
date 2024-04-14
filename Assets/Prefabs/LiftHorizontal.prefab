@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9059501951018276173}
   - component: {fileID: 7235591545914995351}
   - component: {fileID: 4689810402513328717}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!1 &5697398421858927693
 GameObject:
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1
-  _speedFollowPlatform: 0
+  _speedFollowPlatform: 5
   _platform: {fileID: 5628965770424342714}
   _rb: {fileID: 4689810402513328717}
   _rbPlayer: {fileID: 0}
