@@ -56,6 +56,7 @@ public class Move : MonoBehaviour
         //}
         if (Vector3.Angle(other.contacts[0].normal, Vector3.up) <= 45.0f)
         {
+            
             IsGrounded = true;
         }
     }

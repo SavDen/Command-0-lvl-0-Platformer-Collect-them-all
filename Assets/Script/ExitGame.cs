@@ -1,15 +1,21 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ExitGame : MonoBehaviour
 {
-    [SerializeField] private int _needScore;
-    [SerializeField] private GameObject _gameOver, _needLoot;
+    [SerializeField] private int _levelScore;
+    [SerializeField] private GameObject _gameOver, _needScore;
+    [SerializeField] private Text _needScoreText;
     private int actualScore;
 
     private void OnEnable() => EventGame.EnterLoot += OnScore;
 
     private void OnDisable() => EventGame.EnterLoot -= OnScore;
 
+    private void Awake()
+    {
+        _needScoreText.text = "/ " + _levelScore.ToString();
+    }
     private void OnScore()
     {
         actualScore++;
@@ -19,7 +25,7 @@ public class ExitGame : MonoBehaviour
     {
         if(other.TryGetComponent(out Move player))
         {
-            if(actualScore == _needScore)
+            if(actualScore == _levelScore)
             {
                 _gameOver.SetActive(true);
                 player.gameObject.SetActive(false);
@@ -27,7 +33,7 @@ public class ExitGame : MonoBehaviour
 
             else
             {
-                _needLoot.SetActive(true);
+                _needScore.SetActive(true);
             }
         }
 
@@ -35,7 +41,7 @@ public class ExitGame : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        _needLoot.SetActive(false);
+        _needScore.SetActive(false);
     }
 
 
