@@ -3,6 +3,7 @@ using UnityEngine;
 public class Loot : MonoBehaviour
 {
     [SerializeField] private float _speed;
+    [SerializeField] private AudioSource _audio;
 
     private void Update()
     {
@@ -13,6 +14,7 @@ public class Loot : MonoBehaviour
         if(other.TryGetComponent(out Move player))
         {
             EventGame.SelectLoot();
+            _audio.Play();
             gameObject.SetActive(false);
         }
     }

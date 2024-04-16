@@ -6,6 +6,7 @@ public class Move : MonoBehaviour
     [SerializeField] private Transform BodyPlayer;
     [SerializeField] private Transform _respown;
     [SerializeField] private Animator _animtor;
+    [SerializeField] private AudioSource _audio, _bangBomb;
 
     [SerializeField] private float MovedForce;
     [SerializeField] private float FrigtionForce;
@@ -13,6 +14,7 @@ public class Move : MonoBehaviour
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private float _xEuler = 90;
     [SerializeField] private float speedDown;
+    [SerializeField] private float _volumeAudio;
 
     [SerializeField] private bool IsGrounded;
 
@@ -42,9 +44,14 @@ public class Move : MonoBehaviour
         {
             rb.AddForce(-rb.velocity.x * FrigtionForce, 0.0f, 0.0f, ForceMode.VelocityChange);
         }
+    }
 
-        
-
+    private void Update()
+    {
+        if (Input.GetAxis("Horizontal") != 0)
+            _audio.volume = _volumeAudio;
+        else
+            _audio.volume = 0;
     }
     private void OnCollisionStay(Collision other)
     {
@@ -69,6 +76,7 @@ public class Move : MonoBehaviour
     public void Dead()
     {
         transform.position = _respown.position;
+        _bangBomb.Play();
         _animtor.SetTrigger("Dead");
     }
 
