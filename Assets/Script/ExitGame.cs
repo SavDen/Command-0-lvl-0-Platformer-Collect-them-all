@@ -6,7 +6,11 @@ public class ExitGame : MonoBehaviour
     [SerializeField] private int _levelScore;
     [SerializeField] private GameObject _gameOver, _needScore;
     [SerializeField] private Text _needScoreText;
+    [SerializeField] private Text _actualScoreText;
     private int actualScore;
+    
+    
+    
 
     private void OnEnable() => EventGame.EnterLoot += OnScore;
 
@@ -14,7 +18,7 @@ public class ExitGame : MonoBehaviour
 
     private void Awake()
     {
-        _needScoreText.text = "/ " + _levelScore.ToString();
+        _needScoreText.text =  _levelScore.ToString();
     }
     private void OnScore()
     {
