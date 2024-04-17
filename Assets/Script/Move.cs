@@ -49,9 +49,16 @@ public class Move : MonoBehaviour
     private void Update()
     {
         if (Input.GetAxis("Horizontal") != 0)
+        {
             _audio.volume = _volumeAudio;
+            _animtor.SetBool("Move", true);
+        }
         else
+        {
             _audio.volume = 0;
+            _animtor.SetBool("Move", false);
+        }
+
     }
     private void OnCollisionStay(Collision other)
     {
