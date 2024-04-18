@@ -11,7 +11,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/1lvl.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/2lvl.unity
-    guid: ee0a38cd674b3417d8d0dd527497c861
+    guid: 8822fdce6dfd092429612637f991500c
+  - enabled: 1
+    path: Assets/Scenes/3lvl.unity
+    guid: 659e5b911c8cd57459886ea16d6167c9
+  - enabled: 1
+    path: Assets/Scenes/4lvl.unity
+    guid: 7278ec80954094e46b9604d66946d699
+  - enabled: 1
+    path: Assets/Scenes/5lvl.unity
+    guid: 1f5aaaaa24b91554d8ab9b0b3fd8ad7f
+  - enabled: 1
+    path: Assets/Scenes/End Game.unity
+    guid: 943955cd936174c8a995d31a36f96a11
   m_configObjects: {}
