@@ -40,9 +40,10 @@ public class BoombActivate : MonoBehaviour
             _soundBomb.volume = 0.6f;
         }
 
-        if (posPlayer < _distanceDead)
+        if (posPlayer <= _distanceDead)
         {
             _player.Dead();
+            Debug.Log("Player transfomr");
         }
 
         if (_startDeactivation)

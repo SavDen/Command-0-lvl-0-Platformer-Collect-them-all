@@ -8,4 +8,9 @@ public class LoaderScens : MonoBehaviour
         SceneManager.LoadScene(countScene);
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
 }

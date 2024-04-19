@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.31284145, g: 0.29346013, b: 0.5139428, a: 1}
+  m_IndirectSpecularColor: {r: 0.31394914, g: 0.26792583, b: 0.4123744, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1609,6 +1609,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseUI
       objectReference: {fileID: 0}
+    - target: {fileID: 4237956224860506810, guid: 780e62fc0ab3f8545bc8fdedda59b812, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4359751511205217060, guid: 780e62fc0ab3f8545bc8fdedda59b812, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1702,17 +1706,49 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8468028755409125656, guid: 780e62fc0ab3f8545bc8fdedda59b812, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468028755409125656, guid: 780e62fc0ab3f8545bc8fdedda59b812, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468028755409125656, guid: 780e62fc0ab3f8545bc8fdedda59b812, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1481602857}
+      objectReference: {fileID: 600263985}
     - target: {fileID: 8468028755409125656, guid: 780e62fc0ab3f8545bc8fdedda59b812, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 600263985}
+      objectReference: {fileID: 1481602857}
     - target: {fileID: 8468028755409125656, guid: 780e62fc0ab3f8545bc8fdedda59b812, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 7281477226082138007}
+    - target: {fileID: 8468028755409125656, guid: 780e62fc0ab3f8545bc8fdedda59b812, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468028755409125656, guid: 780e62fc0ab3f8545bc8fdedda59b812, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468028755409125656, guid: 780e62fc0ab3f8545bc8fdedda59b812, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Audio, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468028755409125656, guid: 780e62fc0ab3f8545bc8fdedda59b812, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: LoaderScens, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468028755409125656, guid: 780e62fc0ab3f8545bc8fdedda59b812, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468028755409125656, guid: 780e62fc0ab3f8545bc8fdedda59b812, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -41984,6 +42020,7 @@ MonoBehaviour:
   speedDown: -20
   _volumeAudio: 0.5
   IsGrounded: 0
+  _playerInput: 1
 --- !u!33 &4786330824119276347
 MeshFilter:
   m_ObjectHideFlags: 0

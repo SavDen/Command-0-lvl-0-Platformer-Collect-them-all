@@ -16,7 +16,8 @@ public class Move : MonoBehaviour
     [SerializeField] private float speedDown;
     [SerializeField] private float _volumeAudio;
 
-    [SerializeField] private bool IsGrounded;
+    [SerializeField] private bool IsGrounded, _playerInput = true;
+    
 
     private void FixedUpdate()
     {
@@ -37,7 +38,7 @@ public class Move : MonoBehaviour
             rb.velocity = new Vector3(0, speedDown, 0);
             speedMultiplier = 0f;
         }
-
+        if(_playerInput)
         rb.AddForce(Input.GetAxis("Horizontal") * MovedForce * speedMultiplier, 0.0f, 0.0f, ForceMode.VelocityChange);
 
         if (IsGrounded)
@@ -85,6 +86,14 @@ public class Move : MonoBehaviour
         transform.position = _respown.position;
         _bangBomb.Play();
         _animtor.SetTrigger("Dead");
+    }
+
+    public void InputControl()
+    {
+        if (_playerInput)
+            _playerInput = false;
+        else
+            _playerInput = true;
     }
 
 
