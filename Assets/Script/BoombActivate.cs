@@ -20,11 +20,11 @@ public class BoombActivate : MonoBehaviour
     [SerializeField] private bool _startDeactivation, _isTrigger;
 
     private float _timer =0;
-
+    
     private void Start()
     {
         _renderer.enabled = false;
-        _progres.maxValue = _timeDeactiv;
+        //_progres.maxValue = _timeDeactiv;
         _soundBomb = GetComponent<AudioSource>();
     }
 
@@ -102,7 +102,7 @@ public class BoombActivate : MonoBehaviour
         {
             _bombUI.SetActive(true);
             _isTrigger = true;
-           
+            _progres.maxValue = _timeDeactiv;
         }
 
     }
