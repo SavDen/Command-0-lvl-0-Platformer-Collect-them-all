@@ -29,7 +29,7 @@ public class ExitGame : MonoBehaviour
     {
         if(other.TryGetComponent(out Move player))
         {
-            if(actualScore == _levelScore)
+            if(actualScore >= _levelScore)
             {
                 _gameOver.SetActive(true);
                 player.gameObject.SetActive(false);

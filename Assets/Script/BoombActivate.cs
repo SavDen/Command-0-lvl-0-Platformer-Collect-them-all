@@ -1,6 +1,9 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using Unity.VisualScripting;
+using UnityEditor;
 
 public class BoombActivate : MonoBehaviour
 {
@@ -130,7 +133,12 @@ public class BoombActivate : MonoBehaviour
             _deactiv.Play();
             gameObject.SetActive(false);
         }
-
     }
+#if UNITY_EDITOR
+    private void OnDrawGizmosSelected()
+    {
+        Handles.DrawWireDisc(transform.position, Vector3.up, _distanceDead);
+    }
+#endif
 
 }
