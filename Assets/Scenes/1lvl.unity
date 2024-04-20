@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4079345, g: 0.27183005, b: 0.4317577, a: 1}
+  m_IndirectSpecularColor: {r: 0.31394914, g: 0.26792583, b: 0.4123744, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2874,13 +2874,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1835333987}
     m_Modifications:
+    - target: {fileID: 1344821762473080670, guid: 90d053824b17a79448a9deb349e84646, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 111
+      objectReference: {fileID: 0}
     - target: {fileID: 1547580522781419340, guid: 90d053824b17a79448a9deb349e84646, type: 3}
       propertyPath: m_Name
       value: Lift (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3609671308081594944, guid: 90d053824b17a79448a9deb349e84646, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3609671308081594944, guid: 90d053824b17a79448a9deb349e84646, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2924,6 +2928,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3609671308081594944, guid: 90d053824b17a79448a9deb349e84646, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863654792470976873, guid: 90d053824b17a79448a9deb349e84646, type: 3}
+      propertyPath: m_Size.x
+      value: 5.4378057
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863654792470976873, guid: 90d053824b17a79448a9deb349e84646, type: 3}
+      propertyPath: m_Center.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6043670918418788150, guid: 90d053824b17a79448a9deb349e84646, type: 3}
@@ -4380,17 +4392,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1835333987}
     m_Modifications:
+    - target: {fileID: 1344821762473080670, guid: 90d053824b17a79448a9deb349e84646, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 108.77
+      objectReference: {fileID: 0}
     - target: {fileID: 1547580522781419340, guid: 90d053824b17a79448a9deb349e84646, type: 3}
       propertyPath: m_Name
       value: Lift (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3609671308081594944, guid: 90d053824b17a79448a9deb349e84646, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3609671308081594944, guid: 90d053824b17a79448a9deb349e84646, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 177.43073
+      value: 177.51
       objectReference: {fileID: 0}
     - target: {fileID: 3609671308081594944, guid: 90d053824b17a79448a9deb349e84646, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4431,6 +4447,10 @@ PrefabInstance:
     - target: {fileID: 3609671308081594944, guid: 90d053824b17a79448a9deb349e84646, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863654792470976873, guid: 90d053824b17a79448a9deb349e84646, type: 3}
+      propertyPath: m_Size.x
+      value: 5.388396
       objectReference: {fileID: 0}
     - target: {fileID: 6043670918418788150, guid: 90d053824b17a79448a9deb349e84646, type: 3}
       propertyPath: _max
@@ -4824,7 +4844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8636862254302803390, guid: 4f6c5e7ace98d4fc3a03178aaac849ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 208.60074
+      value: 208.7607
       objectReference: {fileID: 0}
     - target: {fileID: 8636862254302803390, guid: 4f6c5e7ace98d4fc3a03178aaac849ca, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5862,13 +5882,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1835333987}
     m_Modifications:
+    - target: {fileID: 1344821762473080670, guid: 90d053824b17a79448a9deb349e84646, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 1547580522781419340, guid: 90d053824b17a79448a9deb349e84646, type: 3}
       propertyPath: m_Name
       value: Lift
       objectReference: {fileID: 0}
     - target: {fileID: 3609671308081594944, guid: 90d053824b17a79448a9deb349e84646, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.58
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3609671308081594944, guid: 90d053824b17a79448a9deb349e84646, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5913,6 +5937,10 @@ PrefabInstance:
     - target: {fileID: 3609671308081594944, guid: 90d053824b17a79448a9deb349e84646, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863654792470976873, guid: 90d053824b17a79448a9deb349e84646, type: 3}
+      propertyPath: m_Size.x
+      value: 5.9141307
       objectReference: {fileID: 0}
     - target: {fileID: 6043670918418788150, guid: 90d053824b17a79448a9deb349e84646, type: 3}
       propertyPath: _max
@@ -42016,7 +42044,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 8938352683348232001}
   BodyPlayer: {fileID: 7467159852474503910}
-  _respown: {fileID: 179510012}
   _animtor: {fileID: 3231723100820660589}
   _audio: {fileID: 1216726163}
   _bangBomb: {fileID: 1904501512}
@@ -42029,6 +42056,7 @@ MonoBehaviour:
   _volumeAudio: 0.5
   IsGrounded: 0
   _playerInput: 1
+  _respown: {fileID: 179510012}
 --- !u!33 &4786330824119276347
 MeshFilter:
   m_ObjectHideFlags: 0

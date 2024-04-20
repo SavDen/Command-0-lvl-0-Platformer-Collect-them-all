@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.27306876, g: 0.28761587, b: 0.5073759, a: 1}
+  m_IndirectSpecularColor: {r: 0.31394914, g: 0.26792583, b: 0.4123744, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -28018,7 +28018,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 8938352683348232001}
   BodyPlayer: {fileID: 7467159852474503910}
-  _respown: {fileID: 179510012}
   _animtor: {fileID: 3231723100820660589}
   _audio: {fileID: 1216726163}
   _bangBomb: {fileID: 1904501512}
@@ -28031,6 +28030,7 @@ MonoBehaviour:
   _volumeAudio: 0.5
   IsGrounded: 0
   _playerInput: 1
+  _respown: {fileID: 179510012}
 --- !u!4 &4850843558776406870
 Transform:
   m_ObjectHideFlags: 0

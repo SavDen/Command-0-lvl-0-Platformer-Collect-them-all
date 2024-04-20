@@ -24,7 +24,6 @@ public class BoombActivate : MonoBehaviour
     private void Start()
     {
         _renderer.enabled = false;
-        //_progres.maxValue = _timeDeactiv;
         _soundBomb = GetComponent<AudioSource>();
     }
 
@@ -43,10 +42,10 @@ public class BoombActivate : MonoBehaviour
             _soundBomb.volume = 0.6f;
         }
 
-        if (posPlayer <= _distanceDead)
+        if (posPlayer <= _distanceDead && _playerTransform != _player._respown)
         {
+            print("Dead");
             _player.Dead();
-            Debug.Log("Player transfomr");
         }
 
         if (_startDeactivation)
@@ -56,7 +55,6 @@ public class BoombActivate : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                //StartCoroutine("Deactiv");
                 _startDeactivation = true;
                 _actionDeactiv.Play();
                 _slider.SetActive(true);
@@ -70,31 +68,10 @@ public class BoombActivate : MonoBehaviour
                 _actionDeactiv.Stop();
                 _slider.SetActive(false);
                 _startDeactivation = false;
-                //StopCoroutine("Deactiv");
-
             }
         }
 
     }
-
-    //IEnumerator Deactiv()
-    //{
-    //    while (true)
-    //    {
-    //        _timer++;
-    //        _progres.value = _timer;
-    //        Debug.Log(_timer);
-    //        if (_timer == _timeDeactiv)
-    //        {
-    //            _bombUI.SetActive(false);
-    //            _progres.value = 0;
-    //            _slider.SetActive(false);
-    //            gameObject.SetActive(false);
-    //        }
-    //        yield return new WaitForSeconds(1);
-    //    }
-
-    //}
 
     private void OnTriggerStay(Collider other)
     {
@@ -122,7 +99,6 @@ public class BoombActivate : MonoBehaviour
     {
         
         _timer += Time.deltaTime;
-        //Debug.Log(timer);
         _progres.value = _timer;
         if(_timer >= _timeDeactiv)
         {

@@ -4,7 +4,6 @@ public class Move : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Transform BodyPlayer;
-    [SerializeField] private Transform _respown;
     [SerializeField] private Animator _animtor;
     [SerializeField] private AudioSource _audio, _bangBomb;
 
@@ -17,7 +16,9 @@ public class Move : MonoBehaviour
     [SerializeField] private float _volumeAudio;
 
     [SerializeField] private bool IsGrounded, _playerInput = true;
-    
+
+    public Transform _respown;
+
 
     private void FixedUpdate()
     {
@@ -64,11 +65,7 @@ public class Move : MonoBehaviour
     private void OnCollisionStay(Collision other)
     {
         
-        //if(other.gameObject.name.Equals("l")) 
-        //{
-        //    Debug.Log("collision");
-        //    //rb.AddForce(speeds, 0, 0);
-        //}
+       
         if (Vector3.Angle(other.contacts[0].normal, Vector3.up) <= 45.0f)
         {
             
@@ -83,7 +80,8 @@ public class Move : MonoBehaviour
 
     public void Dead()
     {
-        transform.position = _respown.position;
+        //transform.position = _respown.position;
+        rb.position = _respown.position;
         _bangBomb.Play();
         _animtor.SetTrigger("Dead");
     }

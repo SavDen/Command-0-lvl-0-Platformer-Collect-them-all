@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ExitGame : MonoBehaviour
@@ -29,15 +30,20 @@ public class ExitGame : MonoBehaviour
     {
         if(other.TryGetComponent(out Move player))
         {
-            if(actualScore >= _levelScore)
-            {
-                _gameOver.SetActive(true);
-                player.gameObject.SetActive(false);
-            }
-
+            if (SceneManager.GetActiveScene().buildIndex == 5)
+                SceneManager.LoadScene(6);
             else
             {
-                _needScore.SetActive(true);
+                if(actualScore >= _levelScore)
+                {
+                    _gameOver.SetActive(true);
+                    player.gameObject.SetActive(false);
+                }
+
+                else
+                {
+                    _needScore.SetActive(true);
+                }
             }
         }
 
