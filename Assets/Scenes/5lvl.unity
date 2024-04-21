@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4079345, g: 0.27183005, b: 0.4317577, a: 1}
+  m_IndirectSpecularColor: {r: 0.31394914, g: 0.26792583, b: 0.4123744, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -570,9 +570,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 736149917}
     m_Modifications:
     - target: {fileID: 2848421053106462696, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
+      propertyPath: _audio
+      value: 
+      objectReference: {fileID: 6032831013727853783}
+    - target: {fileID: 2848421053106462696, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
       propertyPath: _saveUI
       value: 
-      objectReference: {fileID: 1858552920}
+      objectReference: {fileID: 6032831013727853784}
     - target: {fileID: 4154228856916335567, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
       propertyPath: m_Size.x
       value: 5
@@ -3972,9 +3976,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 736149917}
     m_Modifications:
     - target: {fileID: 2848421053106462696, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
+      propertyPath: _audio
+      value: 
+      objectReference: {fileID: 6032831013727853783}
+    - target: {fileID: 2848421053106462696, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
       propertyPath: _saveUI
       value: 
-      objectReference: {fileID: 1858552920}
+      objectReference: {fileID: 6032831013727853784}
     - target: {fileID: 4154228856916335567, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
       propertyPath: m_Size.x
       value: 5
@@ -6987,9 +6995,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 736149917}
     m_Modifications:
     - target: {fileID: 2848421053106462696, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
+      propertyPath: _audio
+      value: 
+      objectReference: {fileID: 6032831013727853783}
+    - target: {fileID: 2848421053106462696, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
       propertyPath: _saveUI
       value: 
-      objectReference: {fileID: 1858552920}
+      objectReference: {fileID: 6032831013727853784}
     - target: {fileID: 4154228856916335567, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
       propertyPath: m_Size.x
       value: 5
@@ -9219,9 +9231,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 736149917}
     m_Modifications:
     - target: {fileID: 2848421053106462696, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
+      propertyPath: _audio
+      value: 
+      objectReference: {fileID: 6032831013727853783}
+    - target: {fileID: 2848421053106462696, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
       propertyPath: _saveUI
       value: 
-      objectReference: {fileID: 1858552920}
+      objectReference: {fileID: 6032831013727853784}
     - target: {fileID: 4154228856916335567, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
       propertyPath: m_Size.x
       value: 5
@@ -9386,9 +9402,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 736149917}
     m_Modifications:
     - target: {fileID: 2848421053106462696, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
+      propertyPath: _audio
+      value: 
+      objectReference: {fileID: 6032831013727853783}
+    - target: {fileID: 2848421053106462696, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
       propertyPath: _saveUI
       value: 
-      objectReference: {fileID: 1858552920}
+      objectReference: {fileID: 6032831013727853784}
     - target: {fileID: 4154228856916335567, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
       propertyPath: m_Size.x
       value: 5
@@ -12098,9 +12118,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 736149917}
     m_Modifications:
     - target: {fileID: 2848421053106462696, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
+      propertyPath: _audio
+      value: 
+      objectReference: {fileID: 6032831013727853783}
+    - target: {fileID: 2848421053106462696, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
       propertyPath: _saveUI
       value: 
-      objectReference: {fileID: 1858552920}
+      objectReference: {fileID: 6032831013727853784}
     - target: {fileID: 4154228856916335567, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
       propertyPath: m_Size.x
       value: 5
@@ -12302,11 +12326,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e744bc0fb47ad4b4e99bf1eff522b894, type: 3}
---- !u!1 &1858552920 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4108994379426944913, guid: e13a12d8190e2e44db9aa7955547d8f9, type: 3}
-  m_PrefabInstance: {fileID: 6032831013727853779}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1863731438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13429,9 +13448,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 736149917}
     m_Modifications:
     - target: {fileID: 2848421053106462696, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
+      propertyPath: _audio
+      value: 
+      objectReference: {fileID: 6032831013727853783}
+    - target: {fileID: 2848421053106462696, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
       propertyPath: _saveUI
       value: 
-      objectReference: {fileID: 1858552920}
+      objectReference: {fileID: 6032831013727853784}
     - target: {fileID: 4154228856916335567, guid: 3f5db7ffce9734d53addbc380b899a40, type: 3}
       propertyPath: m_Size.x
       value: 5
@@ -15689,6 +15712,16 @@ GameObject:
 --- !u!1 &6032831013727853782 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3371808617824381743, guid: e13a12d8190e2e44db9aa7955547d8f9, type: 3}
+  m_PrefabInstance: {fileID: 6032831013727853779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &6032831013727853783 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5591519045857682174, guid: e13a12d8190e2e44db9aa7955547d8f9, type: 3}
+  m_PrefabInstance: {fileID: 6032831013727853779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6032831013727853784 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3447090300396089390, guid: e13a12d8190e2e44db9aa7955547d8f9, type: 3}
   m_PrefabInstance: {fileID: 6032831013727853779}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &6036878088507785280

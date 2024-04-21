@@ -3,18 +3,21 @@ using UnityEngine;
 
 public class TriggerRespown : MonoBehaviour
 {
-    [SerializeField] private GameObject _saveUI;
+    [SerializeField] private Animator _saveUI;
+    [SerializeField] private AudioSource _audio;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.TryGetComponent(out Move playerRespown))
         {
             playerRespown._respown = transform;
-            _saveUI.SetActive(true);
+            _audio.Play();
+            _saveUI.SetTrigger("start");
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        _saveUI.SetActive(false);
+        GetComponent<BoxCollider>().enabled = false;
     }
 }
