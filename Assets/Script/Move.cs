@@ -1,4 +1,5 @@
 using UnityEngine;
+using YG;
 
 public class Move : MonoBehaviour
 {
@@ -19,16 +20,34 @@ public class Move : MonoBehaviour
 
     public Transform _respown;
 
+    static public float InputMobile;
+    static public bool DownBombUI;
 
+    private void Awake()
+    {
+        InputMobile = 0;
+    }
     private void FixedUpdate()
     {
 
         //Moved
-        float forwardForce = Input.GetAxis("Horizontal");
-        if (forwardForce > 0)
-            _xEuler = 90f;
-        else if (forwardForce < 0)
-            _xEuler = 270f;
+        if (YandexGame.EnvironmentData.isDesktop)
+        {
+            float forwardForce = Input.GetAxis("Horizontal");
+            if (forwardForce > 0)
+                _xEuler = 90f;
+            else if (forwardForce < 0)
+                _xEuler = 270f;
+        }
+
+        else if (YandexGame.EnvironmentData.isMobile || YandexGame.EnvironmentData.isTablet)
+        {
+            float forwardForce = InputMobile;
+            if (forwardForce > 0)
+                _xEuler = 90f;
+            else if (forwardForce < 0)
+                _xEuler = 270f;
+        }
 
         transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(0, _xEuler, 0), _rotationSpeed);
 
@@ -39,8 +58,18 @@ public class Move : MonoBehaviour
             rb.velocity = new Vector3(0, speedDown, 0);
             speedMultiplier = 0f;
         }
-        if(_playerInput)
-        rb.AddForce(Input.GetAxis("Horizontal") * MovedForce * speedMultiplier, 0.0f, 0.0f, ForceMode.VelocityChange);
+
+        if (YandexGame.EnvironmentData.isDesktop)
+        {
+            if (_playerInput)
+                rb.AddForce(Input.GetAxis("Horizontal") * MovedForce * speedMultiplier, 0.0f, 0.0f, ForceMode.VelocityChange);
+        }
+
+        else if (YandexGame.EnvironmentData.isMobile || YandexGame.EnvironmentData.isTablet)
+        {
+            if (_playerInput)
+                rb.AddForce(InputMobile * MovedForce * speedMultiplier, 0.0f, 0.0f, ForceMode.VelocityChange);
+        }
 
         if (IsGrounded)
         {
@@ -50,7 +79,7 @@ public class Move : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetAxis("Horizontal") != 0)
+        if (Input.GetAxis("Horizontal") != 0 || InputMobile !=0)
         {
             _audio.volume = _volumeAudio;
             _animtor.SetBool("Move", true);
@@ -81,6 +110,7 @@ public class Move : MonoBehaviour
     public void Dead()
     {
         //transform.position = _respown.position;
+        YandexGame.FullscreenShow();
         rb.position = _respown.position;
         _bangBomb.Play();
         _animtor.SetTrigger("Dead");
@@ -92,6 +122,16 @@ public class Move : MonoBehaviour
             _playerInput = false;
         else
             _playerInput = true;
+    }
+
+    public void MobileInput(float input)
+    {
+        InputMobile =  input;
+    }
+
+    public void DownUI(bool down)
+    {
+        DownBombUI = down;
     }
 
 

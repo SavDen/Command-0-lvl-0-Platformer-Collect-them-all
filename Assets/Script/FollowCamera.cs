@@ -18,9 +18,9 @@ public class FollowCamera : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) || Move.InputMobile > 0)
             _forward = true;
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(KeyCode.A) || Move.InputMobile < 0)
             _forward = false;
 
         if (_forward)

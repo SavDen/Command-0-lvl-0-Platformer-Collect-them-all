@@ -9,7 +9,7 @@ public class BoombActivate : MonoBehaviour
 {
     [SerializeField] private Renderer _renderer;
     [SerializeField] private Transform _playerTransform;
-    [SerializeField] private GameObject _bombUI;
+    [SerializeField] private GameObject _bombUI, _mobileUI;
     [SerializeField] private GameObject _slider;
     [SerializeField] private Move _player;
     [SerializeField] private Slider _progres;
@@ -21,7 +21,7 @@ public class BoombActivate : MonoBehaviour
 
     private float _timer =0;
     
-    private void Start()
+    private void Awake()
     {
         _renderer.enabled = false;
         _soundBomb = GetComponent<AudioSource>();
@@ -31,6 +31,7 @@ public class BoombActivate : MonoBehaviour
     {
 
         float posPlayer = Vector3.Distance(transform.position, _playerTransform.position);
+
         if (posPlayer > _distance)
         {
             _renderer.enabled = false;
@@ -53,31 +54,64 @@ public class BoombActivate : MonoBehaviour
 
         if(_isTrigger)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (YG.YandexGame.EnvironmentData.isDesktop)
             {
-                _startDeactivation = true;
-                _actionDeactiv.Play();
-                _slider.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    _startDeactivation = true;
+                    _actionDeactiv.Play();
+                    _slider.SetActive(true);
+
+                }
+
+                if (Input.GetKeyUp(KeyCode.E))
+                {
+                    _timer = 0;
+                    _progres.value = 0;
+                    _actionDeactiv.Stop();
+                    _slider.SetActive(false);
+                    _startDeactivation = false;
+                }
 
             }
 
-            if (Input.GetKeyUp(KeyCode.E))
+            else if (YG.YandexGame.EnvironmentData.isMobile || YG.YandexGame.EnvironmentData.isTablet)
             {
-                _timer = 0;
-                _progres.value = 0;
-                _actionDeactiv.Stop();
-                _slider.SetActive(false);
-                _startDeactivation = false;
+                if (Move.DownBombUI)
+                {
+                    _startDeactivation = true;
+
+                    if(!_actionDeactiv.isPlaying)
+                      _actionDeactiv.Play();
+
+                    _slider.SetActive(true);
+
+                }
+
+                if (!Move.DownBombUI)
+                {
+                    _timer = 0;
+                    _progres.value = 0;
+                    _actionDeactiv.Stop();
+                    _slider.SetActive(false);
+                    _startDeactivation = false;
+                }
             }
         }
 
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Move _playerMoved))
         {
-            _bombUI.SetActive(true);
+            if (YG.YandexGame.EnvironmentData.isDesktop)
+                _bombUI.SetActive(true);
+
+            else if (YG.YandexGame.EnvironmentData.isMobile || YG.YandexGame.EnvironmentData.isTablet)
+                _mobileUI.SetActive(true);
+                
+
             _isTrigger = true;
             _progres.maxValue = _timeDeactiv;
         }
@@ -92,7 +126,13 @@ public class BoombActivate : MonoBehaviour
         _actionDeactiv.Stop();
         _progres.value = 0;
         _slider.SetActive(false);
-        _bombUI.SetActive(false);
+
+        if (YG.YandexGame.EnvironmentData.isDesktop)
+            _bombUI.SetActive(false);
+
+        else if (YG.YandexGame.EnvironmentData.isMobile || YG.YandexGame.EnvironmentData.isTablet)
+            _mobileUI.SetActive(false);
+
     }
 
     private void Timer()
@@ -108,6 +148,14 @@ public class BoombActivate : MonoBehaviour
             _actionDeactiv.Stop();
             _deactiv.Play();
             gameObject.SetActive(false);
+
+            if (YG.YandexGame.EnvironmentData.isDesktop)
+                _bombUI.SetActive(false);
+
+            else if (YG.YandexGame.EnvironmentData.isMobile || YG.YandexGame.EnvironmentData.isTablet)
+                _mobileUI.SetActive(false);
+
+            Move.DownBombUI = false;
         }
     }
 #if UNITY_EDITOR
