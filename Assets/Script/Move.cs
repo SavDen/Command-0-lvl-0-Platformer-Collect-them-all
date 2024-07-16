@@ -3,10 +3,16 @@ using YG;
 
 public class Move : MonoBehaviour
 {
+    public Transform _respown;
+
+    static public float InputMobile;
+    static public bool DownBombUI;
+
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Transform BodyPlayer;
     [SerializeField] private Animator _animtor;
     [SerializeField] private AudioSource _audio, _bangBomb;
+    [SerializeField] private GameObject timerAds; 
 
     [SerializeField] private float MovedForce;
     [SerializeField] private float FrigtionForce;
@@ -18,14 +24,12 @@ public class Move : MonoBehaviour
 
     [SerializeField] private bool IsGrounded, _playerInput = true;
 
-    public Transform _respown;
 
-    static public float InputMobile;
-    static public bool DownBombUI;
 
     private void Awake()
     {
         InputMobile = 0;
+
     }
     private void FixedUpdate()
     {
@@ -110,7 +114,7 @@ public class Move : MonoBehaviour
     public void Dead()
     {
         //transform.position = _respown.position;
-        YandexGame.FullscreenShow();
+        timerAds.SetActive(true);
         rb.position = _respown.position;
         _bangBomb.Play();
         _animtor.SetTrigger("Dead");
